@@ -11,7 +11,10 @@ public:
 	void Print();
 	float Mediana();
 	float Media();
-	float Stddev();
+	double Stddev();
 	void Sort();
+	int* Classes();
+	float ClassSize();
+	int ObterClasses();
 };
 

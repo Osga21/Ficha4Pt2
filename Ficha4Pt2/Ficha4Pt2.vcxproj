@@ -27,7 +27,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Amostra.cpp" />
-    <ClCompile Include="Hist.cpp" />
     <ClCompile Include="janela.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Ponto.cpp" />

@@ -41,9 +41,6 @@
     <ClCompile Include="Amostra.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Hist.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="janela.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

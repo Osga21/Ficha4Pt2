@@ -19,15 +19,14 @@ int main() {
 		Amostra dados;
 		dados.Ler(filename);
 	
-		printf("\nMediana amostra: %g\nMedia amostra:%g \nDesvio amostra:%g",dados.Mediana(),dados.Media(),dados.Stddev());
-
-
+		printf("Mediana amostra: %g\nMedia amostra:%g \nDesvio amostra:%g", dados.Mediana(), dados.Media(), dados.Stddev());
+		
 		Janela janela;
 		HWND janelaId;
-		int bins[] = { 2, 4, 9, 3, 2 };
-		int nbins = 5;
-		Hist h(bins, nbins);
-		h.SetCorBins(RGB(0, 64, 0));
+
+
+		Hist h(dados.Classes(), dados.ObterClasses());
+		h.SetCorBins(RGB(18, 210, 193));
 		if (janela.Criar("Minha Janela")) {
 			if ((janelaId = janela.ObterId()) != NULL) {
 				h.Desenhar(&janela);

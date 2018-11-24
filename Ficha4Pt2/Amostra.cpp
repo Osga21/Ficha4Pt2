@@ -13,9 +13,9 @@ Amostra::Amostra()
 	Iniciar(0);
 }
 
-
 Amostra::~Amostra()
 {
+	delete[] dados;
 }
 
 void Amostra::Iniciar(int ndados)
@@ -72,9 +72,9 @@ float Amostra::Media()
 	return soma / ndados;
 }
 
-float Amostra::Stddev()
+double Amostra::Stddev()
 {
-	float sumStdev,valStdev;
+	double sumStdev,valStdev;
 	sumStdev = 0;
 	for (int i = 0; i < ndados; i++)
 		sumStdev += pow(dados[i] - Media(), 2);
@@ -100,4 +100,32 @@ void Amostra::Sort()
 		}
 	}
 
+}
+
+int* Amostra::Classes() {
+	Sort();
+
+	int *arrclass;
+	arrclass = new int[nclasses];
+	for (int i = 0; i < nclasses; i++) 
+		arrclass[i] = 0;
+
+	for (int i = 0; i < nclasses; i++)
+		for (int j = 0; j < ndados; j++) {
+			if (dados[j]>=i*ClassSize() && dados[j]<(i+1)*ClassSize()) 
+				arrclass[i]++;
+			
+		}
+	return arrclass;
+	
+}
+
+int Amostra::ObterClasses()
+{
+	return nclasses;
+}
+
+float Amostra::ClassSize() 
+{
+	return dados[ndados - 1] / nclasses;;
 }
