@@ -10,6 +10,8 @@ public:
 	bool Ler(const char* filename);
 	void Print();
 	float Mediana();
+	float Media();
+	float Stddev();
 	void Sort();
 };
 

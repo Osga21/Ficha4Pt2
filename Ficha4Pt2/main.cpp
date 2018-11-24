@@ -18,9 +18,8 @@ int main() {
 		char filename[] = { "test.txt" };
 		Amostra dados;
 		dados.Ler(filename);
-		
-
-		
+	
+		printf("\nMediana amostra: %g\nMedia amostra:%g \nDesvio amostra:%g",dados.Mediana(),dados.Media(),dados.Stddev());
 
 
 		Janela janela;

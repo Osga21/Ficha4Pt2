@@ -2,6 +2,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "Amostra.h"
+#include "math.h"
+
 #include <stdio.h>
 
 
@@ -60,10 +62,31 @@ float Amostra::Mediana()
 
 }
 
+float Amostra::Media()
+{
+	float soma=0;
+	for (int i = 0; i < ndados;i++) {
+		soma += dados[i];
+	}
+	
+	return soma / ndados;
+}
+
+float Amostra::Stddev()
+{
+	float sumStdev,valStdev;
+	sumStdev = 0;
+	for (int i = 0; i < ndados; i++)
+		sumStdev += pow(dados[i] - Media(), 2);
+
+	valStdev = sqrt((1 / double(ndados))*sumStdev);
+	return valStdev;
+}
+
 void Amostra::Sort()
 {
 	bool trocado = true;
-	int aux, j = 0;
+	float aux, j = 0;
 	while (trocado) {
 		trocado = false;
 		j++;
